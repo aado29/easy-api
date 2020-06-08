@@ -25,6 +25,12 @@ Route.group(() => {
 
   Route.get('products/:id', 'ProductController.show')
   Route.get('products/:id/complement-types', 'ProductController.complementTypes')
+  Route.post('products/:id/complement-types', 'ProductController.storeComplementType')
+  Route.put('products/:id/complement-types/:complement_type_id', 'ProductController.updateComplementType')
+  Route.delete('products/:id/complement-types/:complement_type_id', 'ProductController.destroyComplementType')
+  Route.post('products/:id/complement-types/:complement_type_id/complements', 'ProductController.storeComplement')
+  Route.put('products/:id/complement-types/:complement_type_id/complements/:complement_id', 'ProductController.updateComplement')
+  Route.delete('products/:id/complement-types/:complement_type_id/complements/:complement_id', 'ProductController.destroyComplement')
   Route.get('product/categories', 'ProductController.listCategories')
 }).prefix('api/v1')
 
